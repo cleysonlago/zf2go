@@ -9,9 +9,11 @@ return array(
                 'type' => 'Literal',
                 'options' => array(
                     'route' => '/register',
-                    '__NAMESPACE__' => 'SONUser\Controller',
-                    'controller' => 'Index',
-                    'action' => 'register',
+                    'defaults' => array(
+                        '__NAMESPACE__' => 'SONUser\Controller',
+                        'controller' => 'Index',
+                        'action' => 'register',
+                    )
                 )
             )
         )
@@ -39,7 +41,7 @@ return array(
     ),
     'doctrine' => array(
         'driver' => array(
-            __NAMESPACE__ . '_driver' => array(
+                __NAMESPACE__ . '_driver' => array(
                 'class' => 'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
                 'cache' => 'array',
                 'paths' => array(__DIR__ . '/../src/' . __NAMESPACE__ . '/Entity')
